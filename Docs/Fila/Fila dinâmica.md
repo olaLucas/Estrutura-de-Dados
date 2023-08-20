@@ -1,5 +1,3 @@
-# Fila dinâmica
-
 # Inicializar
 
 ```c
