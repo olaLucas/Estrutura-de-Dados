@@ -1,5 +1,3 @@
-# Pilha estática
-
 # Inserir
 
 ```c
