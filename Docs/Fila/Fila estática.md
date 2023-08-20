@@ -1,8 +1,4 @@
-# Fila estática
-
-# Código
-
-## Inserir
+# Inserir
 
 ```c
 /**
@@ -37,7 +33,7 @@ void inserir()
 }
 ```
 
-### Explicação
+## Explicação
 
 - **`void inserir()`**
     
@@ -47,7 +43,7 @@ void inserir()
     - Se a fila estiver cheia, ela exibe uma mensagem de erro e espera que o usuário pressione Enter.
     - Caso contrário, solicita ao usuário que insira um número, armazena esse número na posição corrente de `f1.dados` (a estrutura de dados que parece armazenar os elementos da fila) e incrementa `f1.fim` para apontar para a próxima posição vazia na fila.
 
-## Excluir
+# Excluir
 
 ```c
 /**
@@ -78,7 +74,7 @@ void excluir()
 }
 ```
 
-### Explicação
+## Explicação
 
 - **`void excluir()`**
     
@@ -90,7 +86,7 @@ void excluir()
     - Em seguida, chama a função `realocar()` para deslocar todos os elementos restantes na fila uma posição para frente.
     - Por fim, decrementa `f1.fim` para indicar que a fila está agora um elemento menor.
 
-## Realocar
+# Realocar
 
 ```c
 /**
@@ -126,7 +122,7 @@ void realocar()
 
 ```
 
-### Explicação
+## Explicação
 
 - **`void realocar()`**
     
