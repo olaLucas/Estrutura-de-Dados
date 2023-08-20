@@ -12,7 +12,7 @@ ptr_node inicializar(ptr_node elemento)
 }
 ```
 
-## Explicação ****
+## Explicação
 
 - **`void inicializar()`**
     - Esta função é usada para alocar memória e inicializar um novo nó.
