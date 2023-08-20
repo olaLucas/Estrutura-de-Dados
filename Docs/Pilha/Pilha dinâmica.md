@@ -1,8 +1,4 @@
-# Pilha dinâmica
-
-# Código
-
-## Inicializar
+# Inicializar
 
 ```c
 ptr_node inicializar(ptr_node elemento)
@@ -16,7 +12,7 @@ ptr_node inicializar(ptr_node elemento)
 }
 ```
 
-### Explicação ****
+## Explicação ****
 
 - **`void inicializar()`**
     - Esta função é usada para alocar memória e inicializar um novo nó.
@@ -26,7 +22,7 @@ ptr_node inicializar(ptr_node elemento)
     - Define o campo `proximo` como `NULL` para indicar que é o último elemento da pilha.
     - Retorna o novo nó inicializado.
 
-## Inserir
+# Inserir
 
 ```c
 void inserir(ptr_node * pilha)
@@ -74,7 +70,7 @@ void inserir(ptr_node * pilha)
 }
 ```
 
-### Explicação
+## Explicação
 
 - **`void inserir()`**
     - Esta função é responsável por inserir um elemento na pilha.
@@ -87,7 +83,7 @@ void inserir(ptr_node * pilha)
     - Caso a pilha não esteja vazia, o código percorre a pilha até o último elemento usando um loop `while`.
     - Inicializa o próximo elemento da pilha e atribui o valor `num` a ele.
 
-## Excluir
+# Excluir
 
 ```c
 void excluir(ptr_node * pilha)
@@ -125,7 +121,7 @@ void excluir(ptr_node * pilha)
 }
 ```
 
-### Explicação
+## Explicação
 
 - **`void excluir()`**
     - Esta função é responsável por excluir o elemento mais recentemente inserido na pilha.
