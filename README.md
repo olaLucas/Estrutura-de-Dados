@@ -1,6 +1,6 @@
 # Estrutura de dados
 
-# [Pilha](Estrutura%20de%20dados/Pilha.md)
+# [Pilha](Docs/Pilha.md)
 
 Em computação, uma "pilha" (ou "stack" em inglês) refere-se a uma estrutura de dados fundamental que é usada para armazenar e gerenciar informações. A pilha é organizada de acordo com o princípio do "último a entrar, primeiro a sair" (LIFO - Last-In-First-Out), o que significa que o último elemento adicionado à pilha é o primeiro a ser removido. Pode-se pensar em uma pilha como uma pilha de pratos, onde você adiciona e remove pratos sempre do topo da pilha.
 
@@ -21,7 +21,7 @@ As pilhas são usadas em uma variedade de aplicações na computação, incluind
 
 Em resumo, uma pilha é uma estrutura de dados importante na computação que permite o armazenamento temporário e o gerenciamento eficiente de informações, seguindo o princípio LIFO. Elas desempenham um papel fundamental em muitos aspectos da programação e do funcionamento interno de sistemas de computadores.
 
-# [Fila](Estrutura%20de%20dados/Fila.md)
+# [Fila](Docs/Fila.md)
 
 Em computação, uma "fila" (ou "queue" em inglês) é outra estrutura de dados fundamental usada para armazenar e gerenciar informações. Ao contrário da pilha, uma fila segue o princípio do "primeiro a entrar, primeiro a sair" (FIFO - First-In-First-Out), o que significa que o primeiro elemento adicionado à fila é o primeiro a ser removido.
 
