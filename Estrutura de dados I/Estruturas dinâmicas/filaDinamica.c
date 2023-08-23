@@ -7,14 +7,14 @@ typedef struct node
     struct node * proximo;
 } * ptr_node;
 
-ptr_node inicializar();
+ptr_node init_node();
 void inserir();
 void exibir();
 void excluir();
 void menu();
 void limparBuffer();
 
-ptr_node inicializar(ptr_node elemento)
+ptr_node init_node(ptr_node elemento)
 {
     elemento = (ptr_node)malloc(sizeof(ptr_node));
     elemento->dado = 0;
@@ -43,7 +43,7 @@ void inserir(ptr_node * fila)
 
     if (navegador == NULL)
     {
-        *fila = inicializar(*fila);
+        *fila = init_node(*fila);
         navegador = * fila;
         navegador->dado = num;
     }
@@ -54,7 +54,7 @@ void inserir(ptr_node * fila)
             navegador = navegador->proximo;
         }
 
-        navegador->proximo = inicializar(*fila);
+        navegador->proximo = init_node(*fila);
         navegador = navegador->proximo;
         navegador->dado = num;
     }

@@ -23,7 +23,7 @@ Em resumo, uma pilha é uma estrutura de dados importante na computação que pe
 
 # [Fila](Docs/Fila.md)
 
-Em computação, uma "fila" (ou "queue" em inglês) é outra estrutura de dados fundamental usada para armazenar e gerenciar informações. Ao contrário da pilha, uma fila segue o princípio do "primeiro a entrar, primeiro a sair" (FIFO - First-In-First-Out), o que significa que o primeiro elemento adicionado à fila é o primeiro a ser removido.
+Em computação, uma "fila" (ou "*queue*" em inglês) é outra estrutura de dados fundamental usada para armazenar e gerenciar informações. Ao contrário da pilha, uma fila segue o princípio do "primeiro a entrar, primeiro a sair" (FIFO - First-In-First-Out), o que significa que o primeiro elemento adicionado à fila é o primeiro a ser removido.
 
 Uma fila pode ser imaginada como uma fila de pessoas esperando em uma fila de um caixa, por exemplo. A pessoa que chega primeiro é atendida primeiro, e assim por diante.
 
@@ -44,8 +44,29 @@ Assim como as pilhas, as filas têm várias aplicações na computação, inclui
 
 Em resumo, uma fila é uma estrutura de dados importante na computação que segue o princípio FIFO, permitindo o armazenamento ordenado e o gerenciamento eficiente de informações. Elas desempenham um papel fundamental em muitas áreas da programação e do funcionamento de sistemas de computadores.
 
+# [Lista](Docs/Lista.md)
+Uma lista ligada (também conhecida como lista encadeada) é uma estrutura de dados fundamental em ciência da computação e programação. Ela é usada para organizar e armazenar uma coleção de elementos de dados, chamados de nós, de forma sequencial. Cada nó em uma lista ligada contém dois componentes principais:
+
+1. **Dado:** Isso é onde os elementos de dados reais são armazenados. Pode ser qualquer tipo de informação, como números inteiros, strings ou objetos mais complexos.
+
+2. **Ponteiro**: Isso é uma referência ao próximo nó na lista ligada. Ele aponta para o endereço de memória do próximo nó na sequência.
+
+A principal característica de uma lista ligada é que os nós estão conectados em uma sequência linear, onde o primeiro nó é chamado de "cabeça" (*head*) e o último nó geralmente tem um ponteiro que aponta para um valor nulo (null), indicando o final da lista. Portanto, para percorrer uma lista ligada, você começa na cabeça e segue os ponteiros até chegar ao final.
+
+Existem vários tipos de listas ligadas, incluindo:
+
+1. **Lista encadeada (Singly Linked List):** Neste tipo, cada nó tem um único ponteiro que aponta para o próximo nó na sequência.
+
+2. **Lista duplamente encadeada (Doubly Linked List):** Aqui, cada nó tem dois ponteiros, um que aponta para o próximo nó e outro que aponta para o nó anterior na sequência. Isso permite navegar na lista em ambas as direções.
+
+3. **Lista ligada circular:** Nesta variação, o último nó da lista aponta de volta para o primeiro, formando um loop contínuo.
+
+As listas ligadas têm várias aplicações em programação, como implementação de pilhas, filas, gerenciamento de memória dinâmica e muitos outros algoritmos e estruturas de dados. Elas são especialmente úteis quando o tamanho da coleção de dados pode mudar dinamicamente, pois alocar e liberar memória para nós individuais é mais eficiente do que alocar uma grande quantidade de memória contígua como em um array. No entanto, uma desvantagem das listas ligadas é que o acesso aos elementos não é tão eficiente quanto em arrays, pois requer percorrer a lista a partir do início.
+
 # Documentação dos códigos
 
-[Pilha](Estrutura%20de%20dados%204b68940048bc4603ad7071ed1b1e57e6/Pilha%20995571e6bc6f4d64a658ae636c24be60.md)
+###  [Pilha](Docs/Pilha.md)
 
-[Fila](Estrutura%20de%20dados%204b68940048bc4603ad7071ed1b1e57e6/Fila%205bfa533c62734f3d9204118440221879.md)
+### [Fila](Docs/Fila.md)
+
+### [Lista](Docs/Lista.md)

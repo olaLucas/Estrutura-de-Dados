@@ -7,7 +7,7 @@ typedef struct node
     struct node * proximo;
 } * ptr_node;
 
-ptr_node inicializar();
+ptr_node init_node();
 void inserir();
 void exibir();
 void excluir();
@@ -38,7 +38,7 @@ void inserir(ptr_node * pilha)
 
     if (navegador == NULL) // incializa a pilha
     {
-        *pilha = inicializar(pilha);
+        *pilha = init_node(pilha);
         navegador = * pilha;
         navegador->dado = num;
     }
@@ -49,7 +49,7 @@ void inserir(ptr_node * pilha)
             navegador = navegador->proximo;
         }
     
-        navegador->proximo = inicializar(pilha); // inicializa o proximo elemento
+        navegador->proximo = init_node(pilha); // inicializa o proximo elemento
         navegador = navegador->proximo;
         navegador->dado = num;
     }
@@ -80,7 +80,7 @@ void exibir(ptr_node pilha)
 
 void excluir(ptr_node * pilha)
 {
-    ptr_node navegador = *pilha;
+    ptr_node navegador = * pilha;
     if (navegador == NULL)
     {
         return;
@@ -106,7 +106,7 @@ void excluir(ptr_node * pilha)
     }
 }
 
-ptr_node inicializar(ptr_node elemento)
+ptr_node init_node(ptr_node elemento)
 {
     elemento = (ptr_node)malloc(sizeof(ptr_node));
     elemento->dado = '\0';

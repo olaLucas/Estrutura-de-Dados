@@ -12,16 +12,20 @@ typedef struct node
 ptr_node inicio;
 int counter = 1;
 
-void inicializar();
-void inserir(ptr_node inicio);
-void excluir(ptr_node inicio);
-void exibir(ptr_node inicio);
 void menu();
+void inicializar_elemento(int num);
+void inserir_ordenar();
+void inserir_elemento(ptr_node inicio, int num);
+void quicksort(int array[], int inicio, int fim);
+int particiona_vetor(int array[], int inicio, int fim);
+void excluir_elemento(ptr_node inicio);
+void exibir_lista(ptr_node inicio);
+void swap(int * x, int * y);
 void cleanBuffer();
 
 int main(void)
 {    
-    inicializar();
+    //inicializar();
 
     menu();
     return 0;
@@ -33,7 +37,7 @@ void menu()
     while (seletor != 4)
     {
         system("clear");
-        exibir(inicio);
+        exibir_lista(inicio);
         
         printf("\nSelecione uma opção: \n\n");
         printf("1. Inserir dados.\n");
@@ -47,15 +51,15 @@ void menu()
         switch (seletor)
         {
         case 1:
-            inserir(inicio);
+            inserir_ordenar(inicio);
             break;
 
         case 2:
-            excluir(inicio);
+            excluir_elemento(inicio);
             break;
 
         case 3:
-            exibir(inicio);
+            exibir_lista(inicio);
             break;
 
         case 4:
@@ -71,11 +75,49 @@ void menu()
     }
 }
 
-void inserir(ptr_node inicio)
+void inserir_ordenar(ptr_node navegador)
+{
+    int num = 0;
+    int inicioArr = 0, fimArr = counter - 1; 
+
+    printf("Insira um numero: "); scanf("%d", &num);
+    inserir_elemento(inicio, num);
+
+    if (counter > 2)
+    {
+        int array[counter];
+
+        int i = 0;
+        while(navegador->proximo != NULL)
+        {
+            array[i] = navegador->dado;
+            navegador = navegador->proximo;
+            i++;
+        }
+
+        array[i] = navegador->dado; // pegando o valor do ultimo elemento da lista
+
+        quicksort(array, inicioArr, fimArr);
+
+        navegador = inicio; // voltando navegador para o começo da lista
+        i = 0;
+
+        while(navegador->proximo != NULL)
+        {
+            navegador->dado = array[i];
+            navegador = navegador->proximo;
+            i++;
+        }
+
+        navegador->dado = array[i]; 
+    }
+}
+
+void inserir_elemento(ptr_node inicio, int num)
 {
     if (counter == 1)
     {
-        inicializar();
+        inicializar_elemento(num);
     }
     else
     {
@@ -86,13 +128,42 @@ void inserir(ptr_node inicio)
 
         inicio->proximo = (ptr_node)malloc(sizeof(ptr_node));
         inicio = inicio->proximo;
-        inicio->dado = counter;
-        counter++;
+        inicio->dado = num;
         inicio->proximo = NULL;
+
+        counter++;
     }
 }
 
-void excluir(ptr_node inicio)
+void quicksort(int array[], int inicio, int fim)
+{
+    if (fim < inicio)
+    {
+        return;
+    }
+
+    int pivo = particiona_vetor(array, inicio, fim);
+    quicksort(array, inicio, pivo - 1);
+    quicksort(array, pivo + 1, fim);
+}
+
+int particiona_vetor(int array[], int inicio, int fim)
+{
+    int barraMenores = inicio, pivo = array[fim];
+    for (int barraMaiores = inicio; barraMaiores < fim; barraMaiores++)
+    {
+        if (array[barraMaiores] < pivo)
+        {
+            swap(&array[barraMenores], &array[barraMaiores]);
+            barraMenores++;
+        }
+    }
+
+    swap(&array[barraMenores], &array[fim]);
+    return barraMenores;
+}
+
+void excluir_elemento(ptr_node inicio)
 {
     if (counter == 1)
     {
@@ -153,7 +224,7 @@ void excluir(ptr_node inicio)
     }
 }
 
-void exibir(ptr_node inicio)
+void exibir_lista(ptr_node inicio)
 {   
     if (counter == 1)
     {
@@ -172,12 +243,19 @@ void exibir(ptr_node inicio)
     printf("]");
 }
 
-void inicializar()
+void inicializar_elemento(int num)
 {
     inicio = (ptr_node)malloc(sizeof(ptr_node));
-    inicio->dado = counter;
+    inicio->dado = num;
     inicio->proximo = NULL;
     counter++;
+}
+
+void swap(int * x, int * y)
+{
+    int temp = *x;
+    *x = *y;
+    *y = temp;
 }
 
 void cleanBuffer()
